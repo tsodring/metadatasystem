@@ -47,7 +47,7 @@ exceptions. (Please let us know if there are any exceptions).
 You should be able to see which REST calls are available from the logging information that was written to the
 terminal.  Search for Mapped and you can easily see a list. You will find something similar to the following:
  
- 	`Mapped "{[/krav/{krav:.+}],methods=[GET]}"` 
+ 	`Mapped "{[/activity/{activityNumber}],methods=[GET]}"` 
 
 ## GUI
 
