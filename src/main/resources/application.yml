@@ -8,7 +8,7 @@ server:
     name: MetaSystem (Demo mode)
   servlet:
     context-path: /metasystem
-  port: 9294
+  port: 9387
 
 spring:
   datasource:
