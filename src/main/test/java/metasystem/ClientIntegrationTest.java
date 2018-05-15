@@ -25,7 +25,7 @@ public class ClientIntegrationTest {
     public void createClient() {
 
         Activity activity = new Activity();
-        activity.setActivityName("Name of activity");
+        activity.setTitle("Name of activity");
         activity.setActivityDescription("description");
 
         ResponseEntity<Activity> responseEntity =

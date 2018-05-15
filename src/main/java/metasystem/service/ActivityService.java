@@ -2,19 +2,32 @@ package metasystem.service;
 
 import metasystem.model.Activity;
 import metasystem.persistence.IActivityRepository;
+import metasystem.service.interfaces.IActivityService;
 import org.springframework.stereotype.Component;
-import java.util.Set;
 
-/**
- * Created by tsodring on 10/28/17.
- */
+import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
+import javax.validation.constraints.NotNull;
+
 @Component
-public class ActivityService implements IActivityService {
+@Transactional
+public class ActivityService
+    implements IActivityService {
 
-    private IActivityRepository activityRepository;
+    IActivityRepository activityRepository;
 
     public ActivityService(IActivityRepository activityRepository) {
         this.activityRepository = activityRepository;
+    }
+
+    @Override
+    public Iterable<Activity> findAll() {
+        return activityRepository.findAll();
+    }
+
+    @Override
+    public Activity findById(Long id) {
+        return getActivityOrThrow(id);
     }
 
     @Override
@@ -23,17 +36,37 @@ public class ActivityService implements IActivityService {
     }
 
     @Override
-    public Set<Activity> findAll() {
-        return activityRepository.findAll();
+    public Activity update(Long id, Activity activity) {
+        Activity originalActivity = getActivityOrThrow(id);
+        originalActivity.setActivityDescription(activity.getActivityDescription());
+        originalActivity.setTitle(activity.getTitle());
+        originalActivity.setAnalogueDocumentFormat(activity.getAnalogueDocumentFormat());
+        originalActivity.setDeletionRetentionDeadline(activity.getDeletionRetentionDeadline());
+        originalActivity.setAnalogueDocumentStorage(activity.getAnalogueDocumentStorage());
+        activityRepository.save(originalActivity);
+        return originalActivity;
     }
 
     @Override
-    public Activity findByActivityName(String activityName) {
-        return activityRepository.findByActivityName(activityName);
+    public void delete(Long id) {
+        Activity activity = getActivityOrThrow(id);
+        activityRepository.delete(activity);
     }
 
-    @Override
-    public Activity findByActivityId(Long activityId) {
-        return activityRepository.findByActivityId(activityId);
+    /**
+     * Internal helper method. Rather than having a find and try catch in
+     * multiple methods, we have it here once. If you call this, be aware
+     * that you will only ever get a valid Activity back. If there is no
+     * valid Activity, a EntityNotFoundException exception is thrown
+     *
+     * @param id The id of the activity object to retrieve
+     * @return the activity object
+     */
+    private Activity getActivityOrThrow(@NotNull Long id)
+            throws EntityNotFoundException {
+        return activityRepository.findById(id)
+                .orElseThrow(() ->
+                        new EntityNotFoundException(
+                                "No Activity exists with Id " + id));
     }
 }

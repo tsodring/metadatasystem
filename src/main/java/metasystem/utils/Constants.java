@@ -10,4 +10,8 @@ package metasystem.utils;
 public final class Constants {
     public static final String SLASH  = "/";
     public static final String ACTIVITY = "activity";
+    public static final String ORGANISATION = "organisation";
+    public static final String OPERATION= "operation";
+    public static final String ORGANISATION_AREA = "organisationarea";
+    public static final String ORGANISATION_SEGMENT = "organisationsegment";
 }

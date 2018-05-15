@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<organisation>
+  <name>Kultur- och fritidsnämnden</name>
+  <description>Beskrivelse av Kultur- och fritidsnämnden</description>
+  <operations>
+    <operation>
+      <operationTitle>Kultur</operationTitle>
+      <organisationAreas>
+        <organisationArea>
+          <organisationAreaTitle></organisationAreaTitle>
+          <organisationSegments>
+            <organisationSegment>
+              <organisationSegmentTitle></organisationSegmentTitle>
+            </organisationSegment>
+          </organisationSegments>
+        </organisationArea>
+      </organisationAreas>
+    </operation>
+    <operation>
+      <operationTitle>Bibliotek</operationTitle>
+      <organisationAreas>
+        <organisationArea>
+          <organisationAreaTitle>Ledning och stöd</organisationAreaTitle>
+        </organisationArea>
+        <organisationArea>
+          <organisationAreaTitle>Information</organisationAreaTitle>
+        </organisationArea>
+        <organisationArea>
+          <organisationAreaTitle>Program</organisationAreaTitle>
+        </organisationArea>
+        <organisationArea>
+          <organisationAreaTitle>Mediaförsörjning</organisationAreaTitle>
+        </organisationArea>
+        <organisationArea>
+          <organisationAreaTitle>Uppsökande verksamhet</organisationAreaTitle>
+        </organisationArea>
+        <organisationArea>
+          <organisationAreaTitle>Barn o ungdom</organisationAreaTitle>
+        </organisationArea>
+        <organisationArea>
+          <organisationAreaTitle>Närbibliotek</organisationAreaTitle>
+          <organisationSegments>
+            <organisationSegment>
+              <organisationSegmentTitle>Planering och uppföljning</organisationSegmentTitle>
+
+              <activities>
+                <activity>
+                  <title>Protokoll från eftermöten med närbiblioteken S P Avd Word N 1 år -</title>
+                  <registration>S</registration>
+                  <analogueDocumentFormat>P</analogueDocumentFormat>
+                  <analogueDocumentStorage>AVD</analogueDocumentStorage>
+                  <digitalDocumentFormat>Word</digitalDocumentFormat>
+                  <digitalDocumentStorage>N</digitalDocumentStorage>
+                  <deletionRetentionDeadline>1år</deletionRetentionDeadline>
+                  <depositToArchiveDeadline>-</depositToArchiveDeadline>
+                  <formatForArchiving>PDF</formatForArchiving>
+                </activity>
+                <activity>
+                  <title>Veckobrev V Word N 2 år -</title>
+                  <registration>V</registration>
+                  <analogueDocumentFormat>P</analogueDocumentFormat>
+                  <analogueDocumentStorage>AVD</analogueDocumentStorage>
+                  <digitalDocumentFormat>Word</digitalDocumentFormat>
+                  <digitalDocumentStorage>N</digitalDocumentStorage>
+                  <deletionRetentionDeadline>2år</deletionRetentionDeadline>
+                  <depositToArchiveDeadline>-</depositToArchiveDeadline>
+                  <formatForArchiving>PDF</formatForArchiving>
+                </activity>
+              </activities>
+            </organisationSegment>
+            <organisationSegment>
+              <organisationSegmentTitle>Samordning med integrerade skolbibliotek</organisationSegmentTitle>
+              <activities>
+                <activity>
+                  <title>Protokoll från eventuella möten skola/bibliotekssamverkan.</title>
+                  <registration>V</registration>
+                  <analogueDocumentFormat>P</analogueDocumentFormat>
+                  <analogueDocumentStorage>AVD</analogueDocumentStorage>
+                  <digitalDocumentFormat>Word</digitalDocumentFormat>
+                  <digitalDocumentStorage>N</digitalDocumentStorage>
+                  <deletionRetentionDeadline>1år</deletionRetentionDeadline>
+                  <depositToArchiveDeadline>-</depositToArchiveDeadline>
+                  <formatForArchiving>PDF</formatForArchiving>
+                </activity>
+              </activities>
+            </organisationSegment>
+            <organisationSegment>
+              <organisationSegmentTitle>Föreningssamver</organisationSegmentTitle>
+              <activities>
+                <activity>
+                  <title>Protokoll från möten med föreningar och ev. dokumentation</title>
+                  <registration>V</registration>
+                  <analogueDocumentFormat>P</analogueDocumentFormat>
+                  <analogueDocumentStorage>AVD</analogueDocumentStorage>
+                  <digitalDocumentFormat>Word</digitalDocumentFormat>
+                  <digitalDocumentStorage>N</digitalDocumentStorage>
+                  <deletionRetentionDeadline>1år</deletionRetentionDeadline>
+                  <depositToArchiveDeadline>-</depositToArchiveDeadline>
+                  <formatForArchiving>PDF</formatForArchiving>
+                </activity>
+                <activity>
+                  <title>Kop av protokoll från samverkansgrupp BRÅ</title>
+                  <registration>V</registration>
+                  <analogueDocumentFormat>P</analogueDocumentFormat>
+                  <analogueDocumentStorage>AVD</analogueDocumentStorage>
+                  <digitalDocumentFormat>Word</digitalDocumentFormat>
+                  <digitalDocumentStorage>N</digitalDocumentStorage>
+                  <deletionRetentionDeadline>1år</deletionRetentionDeadline>
+                  <depositToArchiveDeadline>-</depositToArchiveDeadline>
+                  <formatForArchiving>PDF</formatForArchiving>
+                </activity>
+              </activities>
+            </organisationSegment>
+          </organisationSegments>
+        </organisationArea>
+      </organisationAreas>
+    </operation>
+    <operation>
+      <operationTitle>Museum</operationTitle>
+      <organisationAreas>
+        <organisationArea>
+          <organisationAreaTitle></organisationAreaTitle>
+          <organisationSegments>
+            <organisationSegment>
+              <organisationSegmentTitle></organisationSegmentTitle>
+            </organisationSegment>
+          </organisationSegments>
+        </organisationArea>
+      </organisationAreas>
+    </operation>
+    <operation>
+      <operationTitle>Ungdom</operationTitle>
+      <organisationAreas>
+        <organisationArea>
+          <organisationAreaTitle></organisationAreaTitle>
+          <organisationSegments>
+            <organisationSegment>
+              <organisationSegmentTitle></organisationSegmentTitle>
+            </organisationSegment>
+          </organisationSegments>
+        </organisationArea>
+      </organisationAreas>
+    </operation>
+    <operation>
+      <operationTitle>Idrott &amp; Fritid</operationTitle>
+      <organisationAreas>
+        <organisationArea>
+          <organisationAreaTitle></organisationAreaTitle>
+          <organisationSegments>
+            <organisationSegment>
+              <organisationSegmentTitle></organisationSegmentTitle>
+            </organisationSegment>
+          </organisationSegments>
+        </organisationArea>
+      </organisationAreas>
+    </operation>
+    <operation>
+      <operationTitle>Konsumentstöd</operationTitle>
+      <organisationAreas>
+        <organisationArea>
+          <organisationAreaTitle></organisationAreaTitle>
+          <organisationSegments>
+            <organisationSegment>
+              <organisationSegmentTitle></organisationSegmentTitle>
+            </organisationSegment>
+          </organisationSegments>
+        </organisationArea>
+      </organisationAreas>
+    </operation>
+
+
+    <!--
+    <operation>
+      <operationTitle>Konsumentstöd</operationTitle>
+      <organisationAreas>
+        <organisationArea>
+          <organisationAreaTitle></organisationAreaTitle>
+          <organisationSegments>
+           <organisationSegment>
+             <organisationSegmentTitle></organisationSegmentTitle>
+           </organisationSegment>
+          </organisationSegments>
+        </organisationArea>
+      </organisationAreas>
+    </operation>
+    -->
+
+  </operations>
+</organisation>

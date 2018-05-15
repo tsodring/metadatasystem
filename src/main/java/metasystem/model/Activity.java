@@ -1,10 +1,12 @@
 package metasystem.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 import java.util.Objects;
@@ -16,7 +18,8 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "activity")
-@XmlRootElement
+@XmlRootElement(name ="activity")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Activity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -28,6 +31,7 @@ public class Activity implements Serializable {
      *
      */
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
     private Long activityId;
 
@@ -37,13 +41,15 @@ public class Activity implements Serializable {
      * e.g TBD
      *
      */
-    @Column(name = "activity_name", nullable = false)
-    private String activityName;
+    @XmlElement(name = "title")
+    @Column(name = "title")
+    private String title;
 
     /**
      * Description of activity
      *
      */
+    @XmlElement(name = "activityDescription")
     @Column(name = "activity_description", length = 10000)
     private String activityDescription;
 
@@ -52,6 +58,7 @@ public class Activity implements Serializable {
      * Registration
      *
      */
+    @XmlElement(name = "registration")
     @Column(name = "registration")
     private String registration;
 
@@ -59,6 +66,7 @@ public class Activity implements Serializable {
      * Analogue document format
      *
      */
+    @XmlElement(name = "analogueDocumentFormat")
     @Column(name = "analogue_document_format")
     private String analogueDocumentFormat;
 
@@ -66,6 +74,7 @@ public class Activity implements Serializable {
      * Analogue document storage
      *
      */
+    @XmlElement(name = "analogueDocumentStorage")
     @Column(name = "analogue_document_storage")
     private String analogueDocumentStorage;
 
@@ -73,6 +82,7 @@ public class Activity implements Serializable {
      * Digital document format
      *
      */
+    @XmlElement(name = "digitalDocumentFormat")
     @Column(name = "digital_document_format")
     private String digitalDocumentFormat;
 
@@ -80,6 +90,7 @@ public class Activity implements Serializable {
      * Digital document storage
      *
      */
+    @XmlElement(name = "digitalDocumentStorage")
     @Column(name = "digital_document_storage")
     private String digitalDocumentStorage;
 
@@ -87,14 +98,15 @@ public class Activity implements Serializable {
      * Deletion/retention deadline
      *
      */
+    @XmlElement(name = "deletionRetentionDeadline")
     @Column(name = "deletion_retention_deadline")
     private String deletionRetentionDeadline;
-
 
     /**
      * depositToArchiveDeadline
      *
      */
+    @XmlElement(name = "depositToArchiveDeadline")
     @Column(name = "deposit_to_archive_deadline")
     private String depositToArchiveDeadline;
 
@@ -102,6 +114,7 @@ public class Activity implements Serializable {
      * formatForArchiving
      *
      */
+    @XmlElement(name = "formatForArchiving")
     @Column(name = "format_for_archiving")
     private String formatForArchiving;
 
@@ -109,8 +122,15 @@ public class Activity implements Serializable {
      * formatForArchiving
      *
      */
+    @XmlElement(name = "processMetadata")
     @Column(name = "process_metadata")
     private String processMetadata;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_organisation_segment_id",
+            referencedColumnName = "id")
+    private OrganisationSegment referenceOrganisationSegment;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -124,12 +144,12 @@ public class Activity implements Serializable {
         this.activityId = activityId;
     }
 
-    public String getActivityName() {
-        return activityName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setActivityName(String activityName) {
-        this.activityName = activityName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getActivityDescription() {
@@ -218,7 +238,7 @@ public class Activity implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Activity activity = (Activity) o;
         return Objects.equals(activityId, activity.activityId) &&
-                Objects.equals(activityName, activity.activityName) &&
+                Objects.equals(title, activity.title) &&
                 Objects.equals(activityDescription,
                         activity.activityDescription) &&
                 Objects.equals(registration, activity.registration) &&
@@ -242,18 +262,26 @@ public class Activity implements Serializable {
     @Override
     public int hashCode() {
 
-        return Objects.hash(activityId, activityName, activityDescription,
+        return Objects.hash(activityId, title, activityDescription,
                 registration, analogueDocumentFormat, analogueDocumentStorage,
                 digitalDocumentFormat, digitalDocumentStorage,
                 deletionRetentionDeadline, depositToArchiveDeadline,
                 formatForArchiving, processMetadata);
     }
 
+    public OrganisationSegment getReferenceOrganisationSegment() {
+        return referenceOrganisationSegment;
+    }
+
+    public void setReferenceOrganisationSegment(OrganisationSegment referenceOrganisationSegment) {
+        this.referenceOrganisationSegment = referenceOrganisationSegment;
+    }
+
     @Override
     public String toString() {
         return "Activity{" +
                 "activityId='" + activityId + '\'' +
-                ", activityName='" + activityName + '\'' +
+                ", title='" + title + '\'' +
                 ", activityDescription='" + activityDescription + '\'' +
                 ", registration='" + registration + '\'' +
                 ", analogueDocumentFormat='" + analogueDocumentFormat + '\'' +

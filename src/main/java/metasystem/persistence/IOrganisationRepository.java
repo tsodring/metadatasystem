@@ -1,13 +1,11 @@
 package metasystem.persistence;
 
-import metasystem.model.Activity;
+
+import metasystem.model.Organisation;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Set;
-
 @Repository
-public interface IActivityRepository
-        extends CrudRepository<Activity, Long> {
-
+public interface IOrganisationRepository
+        extends CrudRepository<Organisation, Long> {
 }
